@@ -45,9 +45,11 @@ build_pubspec() {
   #start pub from the /app folder to have correct symlink paths
   pub get  
   
-  dart pub global activate webdev
-  if [ -d "web" ]
-  then
+  #** removed webdev build here 
+  if [ -d "web" ] 
+  then 
+    #** placed it here cuz wtf?!
+    dart pub global activate webdev
     message "*** Running webdev build"
     if [[ -z "$DART_BUILD_CMD" ]]
     then
